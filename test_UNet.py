@@ -55,7 +55,7 @@ def get_result_UNet(model_path, data):
 
     # calculate error between original image and predicted image
     mae_error = mae(image.flatten(), pred.flatten())
-    ssim_error = ssim(image.numpy(), pred.numpy(), channel_axis=0)
+    ssim_error = ssim(image.numpy(), pred.numpy(), channel_axis=0, data_range=1.0)
     error = {'mae': mae_error, 'ssim': ssim_error}
     return tF.to_pil_image(pred), error
 
