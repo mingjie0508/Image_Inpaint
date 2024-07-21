@@ -42,7 +42,7 @@ def get_result_UNet(model_path, data):
     # configure model
     unet = UNet(in_channels=3, out_channels=3)
     unet = unet.to(DEVICE)
-    checkpoint = torch.load(model_path)
+    checkpoint = torch.load(model_path, map_location=DEVICE)
     unet.load_state_dict(checkpoint['model_state_dict'])
 
     # get model output

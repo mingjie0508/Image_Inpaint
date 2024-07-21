@@ -38,7 +38,7 @@ def get_result_GAN(model_path, data):
     # configure model
     generator = UNet(in_channels=3, out_channels=3)
     generator = generator.to(DEVICE)
-    checkpoint = torch.load(model_path)
+    checkpoint = torch.load(model_path, map_location=DEVICE)
     generator.load_state_dict(checkpoint['model_state_dict'])
 
     # get model output
