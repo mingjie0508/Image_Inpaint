@@ -29,7 +29,7 @@ def load_UNet():
     if not os.path.exists(UNET_PATH):
         with st.spinner("Downloading model... This may take a while! Don't stop it!"):
             import gdown
-            gdown.download(UNET_GPATH, UNET_PATH, quiet=False)
+            gdown.download(UNET_GPATH, UNET_PATH, quiet=True)
 
 @st.cache_data
 def load_GAN():
@@ -41,7 +41,7 @@ def load_GAN():
     if not os.path.exists(GAN_G_PATH):
         with st.spinner("Downloading model... This may take a while! Don't stop it!"):
             import gdown
-            gdown.download(GAN_G_GPARH, GAN_G_PATH, quiet=False)
+            gdown.download(GAN_G_GPARH, GAN_G_PATH, quiet=True)
 
 def get_resize_size(dim):
     """
