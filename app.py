@@ -124,6 +124,7 @@ if file is not None:
     image = image.resize(resize_size)
     crop_coords = get_crop_coords(image.size)
     image = image.crop(crop_coords)
+    image = image.convert('RGB')
     display_size = (IMAGE_SIZE * DISPLAY_FACTOR, IMAGE_SIZE * DISPLAY_FACTOR)
     image_display = image.resize(display_size)
     st.image(image_display)

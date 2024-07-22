@@ -96,6 +96,7 @@ if __name__ == "__main__":
     # test image
     img_path = 'C:/Users/22156/Desktop/image1.jpg'
     img = Image.open(img_path)
+    img = img.convert('RGB')
     # test mask
     mask = np.ones(img.size)
     mask[40:84,3:47] = 0
