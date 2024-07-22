@@ -109,7 +109,8 @@ def get_mask_coords(point, dim):
     return x_c - MASK_HALF, y_c - MASK_HALF, x_c + MASK_HALF, y_c + MASK_HALF
 
 
-# download models
+# download models from Google drive
+# TODO: Remove the load function calls below when running locally
 load_UNet()
 load_GAN()
 # display
